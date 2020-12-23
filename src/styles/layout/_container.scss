@@ -1,0 +1,20 @@
+.container {
+  $grid-columns: 12;
+
+  display: block;
+
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  max-width: $container-width;
+
+  &--outer {
+    max-width: $container-outer-width;
+  }
+
+  @for $i from 1 through ($grid-columns - 1) {
+    &--#{$i} {
+      max-width: ($container-width / $grid-columns) * $i;
+    }
+  }
+}

@@ -1,0 +1,95 @@
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  color: get-color(text);
+
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  font-weight: $font-weight-base;
+  text-transform: $text-transform-base;
+}
+
+address {
+  font-style: normal;
+}
+
+strong {
+  color: get-color(heading);
+  font-weight: $font-weight-base-bold;
+}
+
+// Links
+a {
+  transition: $transition-all;
+  color: get-color(link);
+  text-decoration: none;
+
+  &:hover {
+    color: get-color(link-hover);
+  }
+}
+
+// Headings
+
+@mixin font-heading() {
+  font-family: $font-family-heading;
+  line-height: $line-height-heading;
+  font-weight: $font-weight-heading;
+  text-transform: $text-transform-heading;
+  letter-spacing: $letter-spacing-heading;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin: 0;
+
+  @include font-heading();
+
+  color: get-color(heading);
+  line-height: $line-height-heading;
+}
+
+// Heading sizes
+@each $heading, $value in $font-size-headings {
+  #{$heading},
+  .#{$heading} {
+    font-size: $value * $font-size-scale-heading;
+  }
+}
+
+// Text
+.text {
+  font-family: $font-family-base;
+  line-height: $line-height-base;
+  font-weight: $font-weight-base;
+
+  &--small {
+    font-size: $font-size-small;
+  }
+
+  &--medium {
+    font-size: $font-size-medium;
+  }
+
+  &--muted {
+    color: get-color(text-pale);
+  }
+}
+
+.highlight {
+  color: get-color(primary);
+}

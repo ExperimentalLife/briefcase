@@ -1,0 +1,12 @@
+.hidden {
+  display: none;
+}
+
+// Hidden helper class: hidden(at)breakpoint
+@each $breakpoint, $width in $breakpoints {
+  @media (min-width: $width) {
+    .hidden\@#{$breakpoint} {
+      display: none;
+    }
+  }
+}

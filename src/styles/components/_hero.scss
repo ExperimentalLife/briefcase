@@ -1,0 +1,55 @@
+.hero {
+  $this: &;
+
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__content {
+    position: relative;
+
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    max-width: 880px;
+  }
+
+  &__heading {  
+    font-size: font-size(185px);
+    font-weight: 400;
+    text-shadow: 0px 0px 99px get-color(black);
+
+    line-height: 1;
+    max-width: 185px;
+
+    margin: auto;
+  }
+
+  &__cta-container {
+    display: flex;
+
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin-top: 25px;
+    margin-right: -10px;
+    margin-left: -10px;
+
+    @include media-query(sm) {
+      margin-top: 45px;
+    }
+  }
+
+  &__cta {
+    margin-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}

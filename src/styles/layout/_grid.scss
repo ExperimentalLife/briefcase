@@ -1,0 +1,228 @@
+.grid {
+  $this: &;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-right: -#{$gutter / 2};
+  margin-left: -#{$gutter / 2};
+
+  @include media-query(sm) {
+    margin-right: -#{$gutter-sm / 2};
+    margin-left: -#{$gutter-sm / 2};
+  }
+
+  &__column {
+    flex: 1;
+    max-width: 100%;
+    padding-right: #{$gutter / 2};
+    padding-left: #{$gutter / 2};
+
+    @include media-query(sm) {
+      padding-right: #{$gutter-sm / 2};
+      padding-left: #{$gutter-sm / 2};
+    }
+
+    @for $i from 1 through 12 {
+      &--#{$i} {
+        flex-basis: percentage($i / 12);
+        max-width: percentage($i / 12);
+
+        @if $i == 12 {
+          width: 100%;
+        }
+      }
+    }
+
+    @each $breakpoint, $width in $breakpoints {
+      @include media-query($breakpoint) {
+        @for $i from 1 through 12 {
+          &--#{$i}\@#{$breakpoint} {
+            flex-basis: percentage($i / 12);
+            max-width: percentage($i / 12);
+          }
+        }
+      }
+    }
+
+    &--shrink {
+      flex: 0 1 auto;
+    }
+
+    &--middle {
+      align-self: center;
+    }
+
+    &--bottom {
+      align-self: flex-end;
+    }
+
+    &--baseline {
+      align-self: baseline;
+    }
+
+    &--stretch {
+      align-self: stretch;
+    }
+
+    &--flex {
+      display: flex;
+    }
+
+    // Order
+    @each $breakpoint, $width in $breakpoints {
+      &--first\@#{$breakpoint} {
+        @include media-query($breakpoint) {
+          order: -1;
+        }
+      }
+
+      &--last\@#{$breakpoint} {
+        @include media-query($breakpoint) {
+          order: 1;
+        }
+      }
+    }
+
+    // Offset
+    @for $i from 1 through 12 {
+      &--offset-#{$i} {
+        margin-left: percentage($i / 12);
+      }
+    }
+
+    @each $breakpoint, $width in $breakpoints {
+      @include media-query($breakpoint) {
+        @for $i from 1 through 12 {
+          &--offset-#{$i}\@#{$breakpoint} {
+            margin-left: percentage($i / 12);
+          }
+        }
+      }
+    }
+  }
+
+  &--right {
+    justify-content: flex-end;
+  }
+
+  &--center {
+    justify-content: center;
+  }
+
+  &--justify {
+    justify-content: space-between;
+  }
+
+  &--space {
+    justify-content: space-around;
+  }
+
+  &--middle {
+    align-items: center;
+  }
+
+  &--bottom {
+    align-items: flex-end;
+  }
+
+  &--stretch {
+    align-items: stretch;
+  }
+
+  &--stack {
+    flex-direction: column;
+  }
+
+  &--gapless {
+    margin-right: 0;
+    margin-left: 0;
+
+    & > #{$this}__column {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  &--small {
+    margin-right: -8px;
+    margin-left: -8px;
+
+    @include media-query(sm) {
+      margin-right: -8px;
+      margin-left: -8px;
+    }
+
+    & > #{$this}__column {
+      padding-right: 8px;
+      padding-left: 8px;
+
+      @include media-query(sm) {
+        padding-right: 8px;
+        padding-left: 8px;
+      }
+    }
+  }
+
+  &--large\@#{md} {
+    @include media-query(md) {
+      margin-right: -#{$gutter-sm};
+      margin-left: -#{$gutter-sm};
+    }
+
+    & > #{$this}__column {
+      @include media-query(md) {
+        padding-right: $gutter-sm;
+        padding-left: $gutter-sm;
+      }
+    }
+  }
+
+  &--waffle {
+    margin: -#{$gutter / 2};
+
+    @include media-query(sm) {
+      margin: -#{$gutter-sm / 2};
+    }
+
+    & > #{$this}__column {
+      padding: #{$gutter / 2};
+
+      @include media-query(sm) {
+        padding: #{$gutter-sm / 2};
+      }
+    }
+
+    &#{$this}--small {
+      margin: -#{$gutter / 4};
+
+      @include media-query(sm) {
+        margin: -#{$gutter-sm / 4};
+      }
+
+      & > #{$this}__column {
+        padding: #{$gutter / 4};
+
+        @include media-query(sm) {
+          padding: #{$gutter-sm / 4};
+        }
+      }
+    }
+
+    &#{$this}--large {
+      margin: -#{$gutter};
+
+      @include media-query(sm) {
+        margin: -#{$gutter-sm};
+      }
+
+      & > #{$this}__column {
+        padding: #{$gutter};
+
+        @include media-query(sm) {
+          padding: #{$gutter-sm};
+        }
+      }
+    }
+  }
+}

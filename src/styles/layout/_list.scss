@@ -1,0 +1,45 @@
+.list {
+  $this: &;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+
+  &__item {
+    flex: 0 1 auto;
+
+    &--expand {
+      display: flex;
+      flex: 1 1 auto;
+    }
+  }
+
+  &--horizontal {
+    flex-direction: row;
+  }
+
+  &--inline {
+    display: inline-flex;
+  }
+
+  &--center {
+    align-items: center;
+  }
+
+  &--end {
+    justify-content: flex-end;
+  }
+
+  &--ordered {
+    margin-left: 1em;
+    list-style: decimal;
+
+    #{$this}__item {
+      padding-left: 0.2em;
+    }
+  }
+}

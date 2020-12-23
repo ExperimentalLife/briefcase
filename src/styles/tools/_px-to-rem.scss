@@ -1,0 +1,4 @@
+// Convert px to rem, based on root size
+@function px-to-rem($size-pixel) {
+  @return $size-pixel / 16px * 1rem;
+}

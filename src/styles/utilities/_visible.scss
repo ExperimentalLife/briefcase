@@ -1,0 +1,11 @@
+// Visible helper class
+// Using max-width because setting display: block; will cause issues (i.e. el can have a default display set to "flex")
+@each $breakpoint, $width in $breakpoints {
+  // TODO: Reduce the breakpoint by 1px
+  // $width: calc(#{$width} - 1px);
+  @media (max-width: $width) {
+    .visible\@#{$breakpoint} {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,146 @@
+@charset "UTF-8";
+
+$breakpoints: (
+  sm: 640px,
+  md: 1024px,
+  lg: 1440px,
+);
+
+$root: 16px;
+
+$container-width: 1410px;
+$container-outer-width: 1800px;
+
+$gutter: 1rem;
+$gutter-sm: 2rem;
+
+$font-family-base: 'Rajdhani', sans-serif;;
+$font-family-heading: 'Rajdhani', sans-serif;;
+
+$font-weight-base: 400;
+$font-weight-base-bold: 700;
+$font-weight-heading: 700;
+
+$font-style-base: normal;
+$font-style-heading: normal;
+
+$line-height-base: 1.5;
+$line-height-heading: 1.2;
+$line-height-high: 1.77;
+
+$text-transform-base: 'none';
+$text-transform-heading: 'none';
+
+$letter-spacing-heading: 0;
+
+$font-size-scale-base: 1;
+$font-size-scale-heading: 1;
+
+$font-size-base: font-size(16px);
+$font-size-small: font-size(14px);
+$font-size-medium: font-size(18px);
+
+$font-size-headings: (
+  h1: 2.5rem,
+  h2: 2rem,
+  h3: 1.5rem,
+  h4: 1.25rem,
+  h5: 1rem,
+  h6: 0.875rem,
+);
+
+$color-primary: #fff;
+$color-background: #C00A4F;
+$background-alternative: #E22338;
+$color-secondary-background: #3a3c45;
+
+$color-text: #ffffff;
+$color-secondary-text: #C00A4F;
+
+$color-input: $color-text;
+
+$color-success: #4caf50;
+$color-error: #f44336;
+
+$colors: (
+  primary: $color-primary,
+  background: $color-background,
+  background-alternative: $background-alternative,
+  secondary-background: $color-secondary-background,
+  background-pale: rgba($color-text, 0.05),
+  text: $color-text,
+  text-bright: $color-text,
+  text-pale: rgba($color-text, 0.6),
+  text-pale2: rgba($color-text, 0.6),
+  secondary-text: $color-secondary-text,
+  link: $color-text,
+  link-hover: rgba($color-text, 0.8),
+  white: #fff,
+  black: #000,
+  success: $color-success,
+  error: $color-error,
+  heading: $color-text,
+  header-background: rgba(0,0,0,0),
+  header-link: $color-text,
+  header-link-hover: rgba($color-text, 0.8),
+  mobile-menu-link: $color-text,
+  mobile-menu-link-hover: rgba($color-text, 0.8),
+  footer-text: $color-text,
+  footer-link: $color-text,
+  footer-link-hover: rgba($color-text, 0.8),
+  divider: rgba($color-text, 0.1),
+  image-background: $color-secondary-background,
+  image-badge-text: #666,
+  image-badge-background: #eaeaea,
+  input-text: $color-input,
+  input-background: rgba(0,0,0,0),
+  input-border: rgba($color-input, .13),
+  input-border-hover: rgba($color-input, .13),
+  input-border-focus: rgba($color-input, .13),
+  input-disabled-text: rgba($color-input, 0.4),
+  input-disabled-background: rgba($color-input, 0.02),
+  input-label: $color-input,
+  input-radio-background: rgba($color-input, .04),
+  input-radio-border-selected: $color-text,
+  input-radio-background-selected: rgba($color-input, .2),
+  select-option: $color-background,
+  color-swatch-disabled-line: #6c6c6c,
+  modal-background: $color-background,
+  button-primary-text: $color-secondary-text,
+  button-primary-background: $color-primary,
+  button-outline: $color-text,
+  button-disabled-text: rgba($color-text, 0.3),
+  button-disabled-background: rgba($color-text, 0.03),
+);
+
+$header-height: 100px;
+$header-height-sm: 88px;
+
+$logo-max-width: 100px;
+
+$img-border-radius: 0;
+$img-ratio-padding: 56%;
+
+$gallery-img-ratio-padding: $img-ratio-padding;
+
+$button-border-radius: 0;
+
+$input-border-width: 2px;
+$input-border-radius: 8px;
+$input-border: $input-border-width solid map-get($colors, 'input-border');
+$input-height: 64px;
+$input-horizontal-padding: 20px;
+$input-icon-width: 22px;
+$input-font-family: $font-family-base;
+$input-font-size: font-size(16px);
+$input-line-height: 1.5;
+
+$divider-size: 1px;
+$divider-style: solid;
+$divider-border: $divider-size $divider-style map-get($colors, 'divider');
+
+$clip-size: 120px;
+
+$transition-time: 200ms;
+$transition-base: $transition-time;
+$transition-all: all 200ms;

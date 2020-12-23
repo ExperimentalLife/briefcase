@@ -1,0 +1,13 @@
+body {
+  position: relative;
+
+  padding-bottom: 0;
+  width: 100%;
+  min-height: 100%;
+
+  background: transparent radial-gradient(closest-side at 50% 50%, get-color(background-alternative)  0%, get-color(background) 100%) 0% 0% no-repeat padding-box;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}

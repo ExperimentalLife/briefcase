@@ -1,0 +1,36 @@
+* {
+  box-sizing: inherit;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  min-height: 100%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  fill: currentColor;
+}
+
+button {
+  border: none;
+  box-shadow: none;
+  outline: none;
+
+  -webkit-appearance: none;
+  background: none;
+  cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
